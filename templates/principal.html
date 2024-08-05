@@ -1,0 +1,141 @@
+{% extends "Plantilla.html "%}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/principal.css') }}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='planes.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="main-container">
+        <div class="Inicio">
+            <h1 class="titulo">-Chat bot para tu empresa-</h1>
+            <h3>Atención al cliente 24/7, fácil de usar, empléalo en cualquier plataforma, listo en pocos minutos</h3>
+            <h1 class="sub">¿Cómo funciona?</h1>
+            <p class="tt">1.- Entrenamos tu ChatBot</p>
+            <p class="t">Podemos usar información en PDF, Word o Excel</p>
+            <p class="tt">2.- Empleado para la plataforma seleccionada</p>
+            <p class="t">Puede ser usado para WhatsApp, Instagram, Messenger, Telegram o su sitio Web</p>
+            <p class="tt">3.- Listo para usar</p>
+            <p class="t">Ya finalizado se le entrega su ChatBot listo para usar en su plataforma deseada, el cual podrá
+                responder 24/7</p>
+        </div>
+        <div class="Beneficios">
+            <div class="beneficios-content">
+                <h2 class="titulo">Beneficios</h2>
+                <ul class="ventajas">
+                    <li>✅ Manejable en la plataforma de tu preferencia</li>
+                    <li>✅ Entrenado para ti automáticamente</li>
+                    <li>✅ Aprende de tus documentos</li>
+                    <li>✅ No necesitas código</li>
+                    <li>✅ Privado y seguro</li>
+                </ul>
+            </div>
+            <button class="boton" onclick="window.location.href='/prueba'">¡Prueba nuestro bot aquí!</button>
+        </div>
+        <div class="Soluciones">
+            <h2>SOLUCIONES PARA TU EMPRESA</h2>
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <img src="{{ url_for('static', filename='img/24horas.png') }}" alt="Servicio 24 horas">
+                    <p class="tituloo">Atención las 24 horas</p>
+                    <p class="texto">Contamos con servicio al cliente las 24 horas del día lo que tendrá un punto bueno
+                        de los clientes por la accesibilidad</p>
+                </div>
+                <div class="tarjeta">
+                    <img src="{{ url_for('static', filename='img/reuniononline.png') }}" alt="Asesorías online">
+                    <p class="tituloo">Asesorias para empleados</p>
+                    <p class="texto">Los empleados pueden asesorarse con la información que les de el chatbot sobre
+                        datos de la empresa</p>
+
+                </div>
+            </div>
+        </div>
+        <div id="planes" class="Planes">
+            <h2>Planes</h2>
+            <div class="toggle-container">
+                <span class="toggle-label" id="monthlyLabel">Mensual</span>
+                <label class="switch">
+                    <input type="checkbox" id="priceToggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="toggle-label" id="annualLabel">Anual</span>
+            </div>
+
+            <div class="paquetes">
+                <div class="plan1" id="plan1">
+                    <h3>Plan Básico</h3>
+                    <p class="price" id="basicPrice">$900/mes</p>
+                    <p class="savings" id="basicSavings"></p>
+                    <p class="puntosp">✔Atención para 500 usuarios</p>
+                    <p class="puntosp">✔Hasta 1,000 para la información del negocio</p>
+                    <p class="puntosp">✔Modificación de información hasta 2 veces</p>
+                    <p class="puntosp">✔Disponibilidad en 1 plataforma (A elección)</p>
+                    <button onclick="selectPlan(1)" class="comprar">Comprar</button>
+                </div>
+                <div class="plan2">
+                    <h3>Plan Estándar</h3>
+                    <p class="price" id="standardPrice">$1980/mes</p>
+                    <p class="savings" id="standardSavings"></p>
+                    <p class="puntosp">✔Atención para 2,500 usuarios</p>
+                    <p class="puntosp">✔Hasta 3,000 para la información del negocio</p>
+                    <p class="puntosp">✔Modificación de información hasta 4 veces</p>
+                    <p class="puntosp">✔Disponibilidad en 2 plataformas (A elección)</p>
+                    <button onclick="selectPlan(2)" class="comprar">Comprar</button>
+                </div>
+                <div class="plan3">
+                    <h3>Plan Premium</h3>
+                    <p class="price" id="premiumPrice">$4580/mes</p>
+                    <p class="savings" id="premiumSavings"></p>
+                    <p class="puntosp">✔Atención para 10,000 usuarios</p>
+                    <p class="puntosp">✔Hasta 7,000 para la información del negocio</p>
+                    <p class="puntosp">✔Modificación de información hasta 8 veces</p>
+                    <p class="puntosp">✔Disponibilidad en 4 plataformas (A elección)</p>
+                    <button onclick="selectPlan(4)" class="comprar">Comprar</button>
+
+                </div>
+
+
+            </div>
+        </div>
+        <div id="nosotros" class="Nosotros">
+            <h2 class="titulo-nosotros">Nosotros</h2>
+            <p class="txt-nosotros">En INTERAI, estamos comprometidos con la innovación y la eficiencia. Nuestro
+                objetivo es proporcionar a las micro, pequeñas y medianas empresas una solución de atención al cliente
+                basada en inteligencia artificial que no solo ahorre recursos, sino que también mejore
+                significativamente la experiencia del usuario.
+
+                Nuestro servicio permite a las empresas cargar sus preguntas frecuentes, horarios de atención,
+                reglamentos y otros documentos relevantes. A partir de esta información, nuestra IA se entrena
+                específicamente para cada negocio, proporcionando una atención al cliente personalizada, rápida y
+                precisa.
+
+                Creemos en la importancia de adaptarnos a las necesidades únicas de cada empresa, y es por eso que
+                trabajamos estrechamente con nuestros clientes para asegurarnos de que nuestra IA se alinee
+                perfectamente con sus objetivos y expectativas. Con INTERAI, las empresas pueden reducir la carga de
+                trabajo de su personal, disminuir costos operativos y mejorar la satisfacción y fidelización de sus
+                clientes.
+
+                En INTERAI, estamos dedicados a transformar la manera en que las empresas interactúan con sus clientes,
+                brindando soluciones tecnológicas avanzadas que impulsan el crecimiento y la eficiencia. </p>
+
+            <img class="img-nosotros" src="{{ url_for('static', filename='img/nosotros.jpg') }}" alt="">
+
+
+
+        </div>
+        <div id="contacto" class="Politicas">
+            <p class="texto-politica">Políticas</p>
+            <p class="txt-tyc">Terminos y condiciones</p>
+            <p class="txt-contacto">Contacto</p>
+            <p class="txt-tel">453-xxx-xx-xx</p>
+            <p class="txt-tel2">453-xxx-xx-xx</p>
+            <p class="txt-correo">Interai@gmail.com</p>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

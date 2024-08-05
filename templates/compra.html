@@ -1,0 +1,82 @@
+{% extends "Plantilla.html "%}
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/compra.css') }}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='compra.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="Secuencia">
+        <button onclick="goBack()">Anterior</button>
+
+        <div class="step s1">
+            <div class="circle">1</div>
+            <div id="stepp ss1">Regístrate</div>
+        </div>
+        <div class="step s2 active">
+            <div class="circle">2</div>
+            <div id="stepp ss2">Configura</div>
+        </div>
+        <div class="step s3">
+            <div class="circle">3</div>
+            <div id="stepp ss3">Paga</div>
+        </div>
+        <div class="step s4">
+            <div class="circle">4</div>
+            <div id="stepp ss4">¡Listo!</div>
+        </div>
+        <button id="nextBtn" onclick="goNext()" disabled>Siguiente</button>
+    </div>
+
+    <div class="formulario" id="comForm">
+        <form id="configForm">
+            <label class="des" for="bot-name">Nombre del bot:</label>
+            <input class="a" type="text" id="bot-name" name="bot-name"
+                placeholder="El nombre con el que se mostrará su bot en las conversaciones">
+
+            <label class="des" for="instructions">Instrucciones:</label>
+            <textarea id="instructions" name="instructions" placeholder="¿Qué puede o no hacer?"></textarea>
+
+            <label class="des" for="conversation-start">Inicio de conversación:</label>
+            <input class="a" type="text" id="conversation-start" name="conversation-start">
+
+            <div class="plataforma">
+                <p>Plataforma:</p>
+                <div class="radio-group">
+                    <label>
+                        <input type="checkbox" name="contact" value="whatsapp"> Whatsapp
+                    </label>
+                    <label>
+                        <input type="checkbox" name="contact" value="telegram"> Telegram
+                    </label>
+                    <label>
+                        <input type="checkbox" name="contact" value="instagram"> Instagram
+                    </label>
+                    <label>
+                        <input type="checkbox" name="contact" value="web"> Página web
+                    </label>
+                    <label>
+                        <input type="checkbox" name="contact" value="messenger"> Messenger
+                    </label>
+                    <label>
+                        <input type="checkbox" name="contact" value="email"> Email
+                    </label>
+                </div>
+            </div>
+        </form>
+        <div class="container2">
+            <div class="upload-section">
+                <div id="dropzone">
+                    <img src="{{ url_for('static', filename='img/upload-icon.png') }}" alt="">
+                    <p>Arrastre los archivos a esta zona <label for="archivos">o haga click aquí</label></p>
+                    <input type="file" id="archivos" name="archivos" multiple />
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}

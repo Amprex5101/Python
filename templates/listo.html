@@ -1,0 +1,38 @@
+{% extends "Plantilla.html "%}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/listo.css') }}" />
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="Secuencia">
+        <button>Anterior</button>
+
+        <div class="step s1">
+            <div class="circle">1</div>
+            <div id="stepp ss1">Regístrate</div>
+        </div>
+        <div class="step s2">
+            <div class="circle">2</div>
+            <div id="stepp ss2">Configura</div>
+        </div>
+        <div class="step s3">
+            <div class="circle">3</div>
+            <div id="stepp ss3">Paga</div>
+        </div>
+        <div class="step s4">
+            <div class="circle">4</div>
+            <div id="stepp ss4">¡Listo!</div>
+        </div>
+        <button>Siguiente</button>
+    </div>
+    <div class="info">
+        <h2>Muchas gracias por su confianza, su ChatBot está listo para usar</h2>
+        <p>Podrá ver más información en su correo electrónico</p>
+        <button onclick="window.location.href='/'" class="comprar">Regresar al Menú</button>
+    </div>
+
+</main>
+
+{% endblock %}

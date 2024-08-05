@@ -32,35 +32,6 @@ body {
     right: 680px;
 }
 
-header {
-    background-color: #2A2950;
-    padding: 25px;
-    height: 50px;
-    width: auto;
-    font-weight: 1000; 
-}
-
-header nav ul {
-    list-style: none ;
-    display: flex;
-    justify-content: space-between ;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    color: #ffffff;
-    margin: 0px 5px;
-    margin-top: -31px;
-}
-
-header nav ul li img.logo {
-    height: 70px;
-    margin-top: 20px;
-    margin-left: 70px;
-}
-
 .spacer {
     flex-grow: 1;
 }

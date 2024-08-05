@@ -1,0 +1,87 @@
+.Secuencia {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 0;
+    flex: 1;
+button {
+    background-color: #4643a2;
+    color: white;
+    border: none;
+    padding: 19px 30px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    border-radius: 28px;
+}
+button:hover {
+    background-color: #4369b5;
+    transition-duration: 1s;
+}
+
+ .steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+.step {
+    text-align: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    border: 1px solid #949297;
+    flex-shrink: 0;
+    font-weight:800; 
+    font-size: 20px;
+}
+.stepp{
+    margin-top: 20px;
+    font-size: 20px;
+}
+}
+
+.Secuencia .circle.active {
+    background-color: #4b4d91;
+}
+
+.info{
+    margin-top: 180px;
+    text-align: center;
+    h2{
+        font-size: 30px;
+    }
+    p{
+        font-size: 25px;
+        font-weight: 700;
+        color: #949297;
+    }
+    button{
+        background-color: #6461aa;
+        border-color: #605dca;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        width: 22%;
+        height: 50px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #282754;
+        border-color: #3f3e69;
+        transition-duration: 1s;
+    }
+}

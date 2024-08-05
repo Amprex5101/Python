@@ -1,0 +1,58 @@
+{% extends "Plantilla.html "%}
+
+{% block links %}
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/paga.css') }}" />
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='limitaciones.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="Secuencia">
+        <button onclick="window.location.href='/compra'">Anterior</button>
+
+        <div class="step s1">
+            <div class="circle">1</div>
+            <div id="stepp ss1">Regístrate</div>
+        </div>
+        <div class="step s2">
+            <div class="circle">2</div>
+            <div id="stepp ss2">Configura</div>
+        </div>
+        <div class="step s3">
+            <div class="circle">3</div>
+            <div id="stepp ss3">Paga</div>
+        </div>
+        <div class="step s4">
+            <div class="circle">4</div>
+            <div id="stepp ss4">¡Listo!</div>
+        </div>
+        <button>Siguiente</button>
+    </div>
+    <div class="desc">
+        <p class="plan">Plan Básico</p>
+        <p class="precio">$900/mes</p>
+    </div>
+    <div class="TC">
+        <p>Ingrese el número de su Tarjeta de Crédito</p>
+        <form class="datos">
+            <label class="Tnum">
+                <input class="T" type="text" id="NumT" placeholder="Número de tarjeta" maxlength="19">
+            </label>
+            <label class="exp">
+                <input class="e" type="month" id="ExpT" placeholder="Mes de expiración">
+            </label>
+            <label class="cvv">
+                <input class="vv" type="text" id="CvT" placeholder="CVV" maxlength="3">
+            </label>
+        </form>
+        <button id="payBtn" onclick="window.location.href='/pagar/listo'" class="rc" disabled>Realizar Compra</button>
+    </div>
+    <div class="PP">
+        <p>Pagar con PayPal</p>
+        <button class="PPbtn">PayPal</button>
+    </div>
+</main>
+{% endblock %}

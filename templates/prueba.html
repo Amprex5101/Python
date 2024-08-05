@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estilos.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/documentos.css') }}">
+    <title>INTERAI</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo">
+                <li>InterAI</li>
+                <span class="spacer"></span>
+                <li>Planes</li>
+                <li>Nosotros</li>
+                <li>Contacto</li>
+            </ul
+        </nav>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="container1">
+                <div class="steps-box">
+                    <div class="steps">
+                        <ol>
+                            <li class="step">
+                                <div class="circle">1</div>
+                                <div id="step1">Regístrate</div>
+                                </li>
+                            <li class="step">
+                                <div class="circle">2</div>
+                                <div id="step">Añade tu documento de prueba</div>
+                            </li>
+                            <li class="step">
+                                <div class="circle">3</div>
+                                <div id="step3">Comienza a probar</div>
+                                </li>
+                        </ol>
+                        <div class="containerbtn">
+                        <button class="btn1" id="prevBtn">Anterior</button>
+                        <button class="btn2" id="nextBtn">Siguiente</button></div>
+                    
+                        
+                        <img src="{{ url_for('static', filename='img/inferior.png') }}" alt="inf" class="imginf">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container2">
+                
+                <!--contenedor del paso 1...-->
+                <div class="step-content" id="step-content-1">
+                    <form>
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="form-field">
+                                    <label for="nombre">Nombre:</label>
+                                    <input type="text" id="nombre" name="nombre">
+                                </div>
+                                <div class="form-field">
+                                    <label for="apellidos">Apellidos:</label>
+                                    <input type="text" id="apellidos" name="apellidos">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="correo">
+                            <label for="correo">Correo de la empresa:</label>
+                            <input type="email" id="correo" name="correo">
+                        </div>
+                        
+                        <div class="Numero">
+                            <label for="telefono">Número de teléfono:</label>
+
+                            <div class="phone-input">
+                                <select>
+                                    <option value="+">+</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <input type="tel" id="telefono" name="telefono">
+                            </div>
+                        </div>
+                        
+                        <div class="nombre">
+                            <label for="empresa">Nombre de la empresa:</label>
+                            <input type="text" id="empresa" name="empresa">
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="Roles">
+                                <div class="Rol">
+                                    <label for="nombre">Rol:</label>
+                                    <input type="text" id="rol" name="rol">
+                                </div>
+                                <div class="Empleados">
+                                    <label for="empleado">No. Empleados:</label>
+                                    <select id="empleados" name="empleados">
+                                        <option value="1-10">1-10</option>
+                                        <option value="11-50">11-50</option>
+                                        <option value="51-200">51-200</option>
+                                        <option value="201-500">201-500</option>
+                                        <option value="500+">500+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                 </form>   
+            </div>
+                <!--contenedor del paso 2...-->
+                <div class="step-content" id="step-content-2" style="display: none;">
+                <div class="upload-section">
+                    <div id="dropzone">
+                        <!-- Puse un div distinto para cargar todos los documentos que se vayan agregando-->
+                        <div id="file-list">
+                            <?php include 'HerramientasPHP/load_files.php'; ?>
+                        </div>
+
+                        <p>Arrastre los archivos a esta zona <label for="archivos">o haga click aquí</label></p>
+                        <input type="file" id="archivos" name="archivos" multiple />
+                    </div>
+                    <form>
+                        <label for="bot-name">Nombre del bot:</label>
+                        <input type="text" id="bot-name" name="bot-name">
+                        
+                        <label for="instructions">Instrucciones:</label>
+                        <textarea id="instructions" name="instructions"></textarea>
+                        
+                        <label for="conversation-start">Inicio de conversación</label>
+                        <input type="text" id="conversation-start" name="conversation-start">
+                    </form>
+                </div>
+                <!--contenedor del paso 3...-->
+                <div class="step-content" id="step-content-3" style="display: none;">
+            </div>
+        </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='click.js') }}"></script>
+
+
+    </main>
+     
+ <div class="circlebody circle1"></div>
+ <div class="circlebody circle2"></div>
+</body>
+</html>

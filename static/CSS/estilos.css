@@ -1,62 +1,102 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #cce7f0;
+    font-family: Verdana;
+    background-color: #dddcf3;
     margin: 0;
     padding: 0;
-    position: relative;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 1300px;
+    
+}
+.circlebody {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.circle1 {
+    width: 270px;
+    height: 270px;
+    background-color: #a2a5f7;
+    bottom: 20px;
+    right: 50px;
+}
+
+.circle2 {
+    width: 270px;
+    height: 270px;
+    background-color: #a2a5f7;
+    bottom:360px;
+    right: 680px;
 }
 
 header {
-    background-color: #2c3e50;
-    padding: 20px;
+    background-color: #2A2950;
+    padding: 25px;
+    height: 50px;
+    width: auto;
+    font-weight: 1000; 
 }
 
 header nav ul {
-    list-style: none;
+    list-style: none ;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between ;
     align-items: center;
     margin: 0;
     padding: 0;
 }
 
 header nav ul li {
-    color: #ecf0f1;
-    margin: 0 10px;
+    color: #ffffff;
+    margin: 0px 5px;
+    margin-top: -31px;
 }
 
 header nav ul li img.logo {
-    height: 60px;
+    height: 70px;
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.spacer {
+    flex-grow: 1;
 }
 
 .main-container {
     display: flex;
-    flex-direction: row; /* Cambiado para alinear en vertical */
-    align-items: apace-between;
-    margin: 20px auto;
-    width: 80%;
-    gap: 1cm; /* Espacio entre los contenedores */
+    flex: 1;
+    box-sizing: border-box;
+
+    /*gap: 1cm; /* Espacio entre los contenedores */
 }
 
 .container1 {
-    background-color: #f0f2f5; /* Color de fondo del contenedor */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: #ffffff; /* Color de fondo del contenedor */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    flex: 1;
-    border: 2px solid #3498db; /* Border */
+    width: 500px; /*ancho*/
+    height: 635px;
+    font-family: verdana;
+    font-size: 35px;
+   
 }
 
 .container2 {
     background-color: #ffffff; /* Color de fondo diferente para el segundo contenedor */
-    border-radius: 10px;
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     padding: 20px;
     flex: 1;
-    border: 2px solid #3498db; /* Border specific to container2 */
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #979797; /* Border specific to container2 */
+    width: 300px;      
 }
-
 
 .steps {
     display: flex;
@@ -64,11 +104,12 @@ header nav ul li img.logo {
     align-items: center;
     cursor: pointer;
     margin: 10px 0;
+    flex: 1;
 }
 
 .steps ol {
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
 }
 
@@ -78,47 +119,84 @@ header nav ul li img.logo {
     margin: 10px 0;
     padding: 10px;
     cursor: pointer;
+    
 }
 
 .steps ol li .circle {
-    width: 30px;
-    height: 30px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
-    background-color: #98ddf6;
-    color: white;
+    color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 10px;
     transition: background-color 0.3s;
+    border: 1px solid #6b2bcb;
+    flex-shrink: 0; 
+}
 
+.steps ol li .texto {
+    margin: 20px;
 }
 
 .steps ol li.active .circle {
-    background-color: #3498db;
-    color: #ffffff;
+    background-color: #401286;
+    color: #ffffff;  
 }
-
 .steps ol li.active {
     font-weight: bold;
-    color: rgb(0, 145, 255);
+    color: rgb(0, 0, 0);
     transition: color 0.3s, font-weight 0.3s;
     /*border-left: 4px solid #3498db;
     background-color: #f0f4ff;
     border-radius: 5px;*/
 }
+.containerbtn {
+    display: flex;
+    justify-content: flex-start; /* Alinear a la izquierda */
+    gap: 100px; /* Espacio entre los botones */
+    margin-top: 20px; /* Espacio superior */
+}
 
-.btn {
-    background-color: #3498db;
+.btn1{
+    background-color: #401286;
+    flex: none; /* Permite que los botones mantengan su tamaño natural */
+    margin: 0; /* Elimina el margen adicional */
     color: #ffffff;
     border: none;
-    padding: 10px 20px;
-    margin: 10px 0;
+    padding: 10px 30px;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%;
+    border-radius: 20px;
     text-align: center;
+    font-family: verdana;
+    font-size: 20px;   
+    width: 150px;
+    font-weight: 1000;
 }
+.btn2{
+    background-color: #401286;
+    flex: none; /* Permite que los botones mantengan su tamaño natural */
+    margin: 0; /* Elimina el margen adicional */
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    border-radius: 20px;
+    text-align: center;
+    font-family: verdana;
+    font-size: 20px;   
+    width: 150px;
+    font-weight: 1000;
+}
+.imginf {
+    height: 90px;
+    width: 539.5px;
+    margin-top: 60px;
+    display: flex;
+}
+.btn:hover {
+    background-color: #370f6b;}
 
 .upload-section {
     display: flex;
@@ -127,24 +205,22 @@ header nav ul li img.logo {
 
 #dropzone {
     padding: 20px;
-    border: 2px dashed #3498db;
     border-radius: 10px;
     text-align: center;
     margin-bottom: 20px;
-    background-color: #ffffff;
+    background-color: #979797;
+    border-radius: 50px;
 }
 
 .upload-icon {
     height: 105px;
     margin-bottom: 20px;
-    width: 400px;
+    width: 100px;
 
 }
-
 #dropzone p {
-    margin: 10px 0;
+    margin: 10px 70px;
 }
-
 #dropzone label{
     border-bottom: 1px solid blue;
     color: blue;
@@ -154,26 +230,209 @@ header nav ul li img.logo {
 #dropzone input{
     display: none;
 }
+
+
 form {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+form label {
+    margin: 7px 0 10px;
+    font-weight: bold;  
+
+}
+form input, form textarea {
+    padding: 10px;
+    border: 1px solid #979797;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: 1000;
+}
+
+/* Diseño del Paso 1 */
+#step-content-1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 50px;
+}
+
+.correo { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px; /* Ajustar el espacio entre los grupos de formulario */
+    width: 100%;
+
+}
+.correo label {/*letras*/
+    color: #000000;
+    margin-bottom: 5px; /* Añadir margen inferior a las etiquetas */
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-weight: bold;  
+
+}
+.correo input[type="email"] {
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 17px;
+    max-width: 600px;
+    height: 45px;
+    min-width: 310px;
+}
+
+.nombre { 
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px; /* Ajustar el espacio entre los grupos de formulario */
+    width: 100%;
+}
+
+.nombre label {/*letras*/
+    color: #000000;
+    margin-bottom: 5px; /* Añadir margen inferior a las etiquetas */
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+}
+.nombre input[type="text"] {
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 17px;
+    max-width: 600px;
+    height: 45px;
+    min-width: 310px;
+}
+
+.Numero { /*correo y nombre*/
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px; /* Ajustar el espacio entre los grupos de formulario */
+    width: 100%;
+}
+.Numero label {
+    color: #000000;
+    margin-bottom: 5px; /* Añadir margen inferior a las etiquetas */
+    width: 100%;
+    display: block;
+    font-weight: bold;  
+}
+.phone-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 250px;
+}
+.Numero .phone-input select {
+    padding: 10px;
+    border: 1px solid #979797;
+    border-radius: 15px;
+    font-family: Verdana;
+    font-size: 16px;
+    margin-bottom: 10px; /* Añadir margen inferior a los campos */
+    display: flex;
+    height: 55px; 
+    cursor: pointer;   
+}
+
+.Numero .phone-input input[type="tel"] {
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 17px;
+    width: 99%;
+    height: 45px;
+    min-width: 210px;
+}
+   
+.Empleados select {
+    border: none;
+    padding: 50px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 5px;
+    max-width: 110px;
+    min-width: 80px; 
+    border: 1px solid #979797;
+    cursor: pointer; 
+    appearance: menulist; 
+}
+
+ .form-row {
+    display: flex;
+    gap: 10px; /* Añadir espacio entre los campos de la misma fila */
+    width: 100%; /* Asegura que la fila use todo el ancho del contenedor */
+    flex: 1;}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    min-width: 155px; /* Para evitar que se reduzcan demasiado */
+    width: 100%;
+}
+
+ .form-group{
+    display: flex;
+    margin-bottom: 0px;
+    flex-direction: column;
+    align-items: flex-start;}
+
+ .Roles {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;}
+
+
+.Rol{
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px; /* Espacio entre Rol y No. Empleados */
+    flex: 1;}
+
+ .Roles .Empleados label{
+    display: inline-block;
+    white-space: nowrap; /* Evita el salto de línea */
+}
+ .Roles .Rol label, .Roles .Empleados label {
+    color: #000000;
+    margin-bottom: 5px; /* Añadir margen inferior a las etiquetas */
+    display: block;
+}
+ 
+ .form-group .Roles .Rol label{
+    color: #000000;
+    margin-bottom: 10px; /* Añadir margen inferior a las etiquetas */
+    width: 100%;
+    display: block; 
+ }
+
+ .form-group .Roles input {
+    padding: 5px;
+    border: 1px solid #979797;
+    border-radius: 17px;
+    width: 100%;
+    height: 20px;
+    min-width: 10%;
     display: flex;
     flex-direction: column;
 }
 
-form label {
-    margin: 10px 0 5px;
-}
 
-form input, form textarea {
-    padding: 10px;
-    border: 1px solid #e0e0e0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
 
-#fotos {
-    list-style: none;
-    padding: 0;
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group select {
+    padding: 20px;
+    border: 1px solid #979797;
+    border-radius: 17px;
+    font-family: Verdana;
+    font-size: 16px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
+
+/* Diseño del Paso 3 */
+
+

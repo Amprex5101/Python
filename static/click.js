@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Manejar el clic del botón "Siguiente"
     nextBtn.addEventListener('click', function() {
-        if (currentStep < steps.length - 1) {
+        if (currentStep < steps.length -1) {
             currentStep++;
             updateSteps();
         }

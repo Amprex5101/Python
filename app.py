@@ -2,7 +2,7 @@
 
 from flask import Flask, request, jsonify, render_template
 import os
-import funciones
+import documentos
 
 app = Flask(__name__)
 UPLOAD_DIRECTORY = "uploads/"
@@ -16,18 +16,18 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    result, status_code = funciones.upload_file(request)
+    result, status_code = documentos.upload_file(request)
     return jsonify(result), status_code
 
 @app.route('/delete_file', methods=['POST'])
 def delete():
     filename = request.form.get('delete_file')
-    result, status_code = funciones.delete_file(filename)
+    result, status_code = documentos.delete_file(filename)
     return jsonify(result), status_code
 
 @app.route('/load_files', methods=['GET'])
 def load():
-    files = funciones.load_files()
+    files = documentos.load_files()
     return render_template('load_files.html', files=files)
 
 @app.route('/planes')

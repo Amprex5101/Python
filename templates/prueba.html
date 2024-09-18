@@ -3,6 +3,14 @@
 {% block links %}
 <link rel="stylesheet" href="{{ url_for('static', filename='CSS/estilos.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='CSS/documentos.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='CSS/chat.css') }}" />
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='click.js') }}"></script>
+<script src="{{ url_for('static', filename='chat.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -120,14 +128,17 @@
                         <input type="text" id="conversation-start" name="conversation-start">
                     </form>
                 </div>
-                <!--contenedor del paso 3...-->
-                <div class="step-content" id="step-content-3" style="display: none;">
+            </div>
+            <div class="step-content" id="step-content-3" style="display: none;">
+                <div class="chat-box">
+                    <h2>Customer Service Chat</h2>
+                    <div class="chat-log" id="chat-log"></div>
+                    <input type="text" class="chat-input" id="chat-input" placeholder="Type your question here..." disabled>
+                    <button class="chat-button" id="send-message" disabled>Send Message</button>
+                    <button class="chat-button" id="start-conversation">Start Conversation</button>
                 </div>
             </div>
             <script src="{{ url_for('static', filename='script.js') }}"></script>
-            <script src="{{ url_for('static', filename='click.js') }}"></script>
-
-
 </main>
 
 <div class="circlebody circle1"></div>

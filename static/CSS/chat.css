@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  .chat-box {
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .chat-log {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .chat-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .chat-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .chat-button:disabled {
+    background-color: #ccc;
+  }
